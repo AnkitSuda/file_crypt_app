@@ -12,26 +12,40 @@
  * See the GNU General Public License for more details.
  */
 
+import "dart:io";
+
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:flutter_localizations/flutter_localizations.dart";
 import "package:flutter/material.dart";
+
+import "../../../util/localization_utils.dart";
+import "../../navigation/app_routes.dart";
 
 class Root extends StatelessWidget {
   const Root({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Flutter Demo",
+    return MaterialApp.router(
+      onGenerateTitle: (context) => context.localizations.appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            "Flutter Demo Home Page",
-          ),
-        ),
-      ),
+      routeInformationProvider: AppRouter.router.routeInformationProvider,
+      routeInformationParser: AppRouter.router.routeInformationParser,
+      routerDelegate: AppRouter.router.routerDelegate,
+      debugShowCheckedModeBanner: false,
+      locale: Locale(Platform.localeName),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale("en"), // English
+      ],
     );
   }
 }
