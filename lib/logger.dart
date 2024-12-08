@@ -12,10 +12,17 @@
  * See the GNU General Public License for more details.
  */
 
-import "package:flutter/material.dart";
+import "package:flutter/foundation.dart";
+import "package:logger/logger.dart";
 
-import "ui/presentation/root/root.dart";
-
-void main() {
-  runApp(const Root());
-}
+final logger = Logger(
+  printer: PrefixPrinter(
+    PrettyPrinter(
+      methodCount: 0,
+      noBoxingByDefault: true,
+      colors: false,
+      dateTimeFormat: DateTimeFormat.none,
+    ),
+  ),
+  level: kDebugMode ? Level.all : Level.info,
+);
