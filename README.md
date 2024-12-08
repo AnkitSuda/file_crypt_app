@@ -1,3 +1,4 @@
-# file_crypt_app
+# File crypt app (Under development)
 
-File crypt app
+Encrypt and decrypt files. 
+Supports Google Drive.
