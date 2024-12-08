@@ -1,0 +1,41 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+    annotate_overrides: ignore
+  exclude:
+    - '**.freezed.dart'
+    - '**.tailor.dart'
+    - '**.g.dart'
+    - '**.gr.dart'
+    - '**/generated_plugin_registrant.dart'
+
+linter:
+  rules:
+    - avoid_print
+    - prefer_double_quotes
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_literals_to_create_immutables
+    - prefer_final_locals
+    - unnecessary_new
+    - unnecessary_this
+    - avoid_returning_null_for_future
+    - avoid_unnecessary_containers
+    - avoid_single_cascade_in_expression_statements
+    - avoid_renaming_method_parameters
+    - use_key_in_widget_constructors
+    - sort_child_properties_last
+    - eol_at_end_of_file
+    - no_runtimeType_toString
+    - prefer_relative_imports
+    - prefer_spread_collections
+    - require_trailing_commas
+    - sized_box_shrink_expand
+    - unawaited_futures
+    - unnecessary_late
+    - unnecessary_lambdas
+    - unnecessary_parenthesis
+    - use_colored_box
+    - use_decorated_box
